@@ -122,7 +122,7 @@ const logoutAdmin = document.getElementById('logoutAdmin');
 const clearMessages = document.getElementById('clearMessages');
 const adminPassword = document.getElementById('adminPassword');
 
-                                                                                                                                                                                                                                                                                                                                                                // const ADMIN_PASSWORD = '#';
+                                                                                                                                                                                                                                                                                                                                                                                                                                          // const ADMIN_PASSWORD = '';
 let isAdminLoggedIn = false;
 
 // Show admin panel (hidden button in corner)
