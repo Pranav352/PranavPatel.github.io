@@ -951,11 +951,19 @@ footer p {
     font-size: 1.2rem;
     transition: all 0.3s;
     z-index: 999;
+    /* Hidden by default - visible only on hover in top-left corner area */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show admin button when hovering over a specific trigger area */
+.admin-access-btn.visible {
     opacity: 0.3;
+    pointer-events: auto;
 }
 
 .admin-access-btn:hover {
-    opacity: 1;
+    opacity: 1 !important;
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
