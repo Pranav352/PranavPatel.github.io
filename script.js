@@ -122,8 +122,19 @@ const logoutAdmin = document.getElementById('logoutAdmin');
 const clearMessages = document.getElementById('clearMessages');
 const adminPassword = document.getElementById('adminPassword');
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                          const ADMIN_PASSWORD = 'Pranav74';
+                                                                                                                                                                                                                                                const ADMIN_PASSWORD = 'Pranav74';
 let isAdminLoggedIn = false;
+
+// Keyboard shortcut to reveal admin button (Ctrl+Shift+A on Windows/Linux, Cmd+Shift+A on Mac)
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        adminAccessBtn.classList.toggle('visible');
+        if (adminAccessBtn.classList.contains('visible')) {
+            alert('Admin button revealed! Click the gear icon in the bottom-right corner.');
+        }
+    }
+});
 
 // Show admin panel (hidden button in corner)
 adminAccessBtn.addEventListener('click', function() {
@@ -159,6 +170,10 @@ logoutAdmin.addEventListener('click', function() {
     adminPasswordSection.style.display = 'block';
     messagesList.style.display = 'none';
     adminPassword.value = '';
+    // Remove hash and redirect to home page
+    window.location.hash = '';
+    window.location.href = '#home';
+    adminSection.style.display = 'none';
 });
 
 // Load and display messages
